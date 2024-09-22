@@ -22,6 +22,11 @@
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{%- if section.settings.pagination_type == 'load_more_button' -%}
+  <script src="{{ 'load-more-btn.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -36,7 +41,12 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+<collection-grid 
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"  
+  data-limit="{{ section.settings.products_per_page }}"
+  data-total-products-quantity="{{ collection.products_count }}"
+  data-collection-handle="{{ collection.handle }}"
+>
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -140,10 +150,22 @@
           <div
             class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
           >
+            {%- if paginate.current_page > 1 and section.settings.pagination_type == 'load_more_button' -%} 
+              <div id="load-previous-btn" class="load-more-container">
+                <button
+                  type="submit"
+                  class="button button--full-width load-more-container__btn"
+                >
+                  <span data-button-text>{{ 'sections.collection_template.load_previous' | t }}</span>
+                  {% render 'loading-spinner' %}
+                </button>
+              </div>
+            {%- endif -%}
             <div class="loading-overlay gradient"></div>
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
+              data-product-wrapper-js
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
@@ -158,6 +180,7 @@
                 {%- endif -%}
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  data-product-container-js
                   {% if settings.animations_reveal_on_scroll %}
                     data-cascade
                     style="--animation-order: {{ forloop.index }};"
@@ -179,9 +202,21 @@
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}
             </ul>
-
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- if section.settings.pagination_type == 'pagination' -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- else -%}
+                {%- assign loaded_products_count = paginate.current_page | times: section.settings.products_per_page -%}
+                <div id="load-more-btn" class="load-more-container{% if loaded_products_count >= collection.products_count %} hidden{% endif %}">
+                  <button
+                    type="submit"
+                    class="button button--full-width load-more-container__btn"
+                  >
+                    <span data-button-text>{{ 'sections.collection_template.load_more' | t }}</span>
+                    {% render 'loading-spinner' %}
+                  </button>
+                </div>
+              {%- endif -%}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -191,7 +226,7 @@
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
   {%- endif -%}
-</div>
+</collection-grid>
 
 {% schema %}
 {
@@ -222,6 +257,22 @@
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "pagination_type",
+      "options": [
+        {
+          "value": "pagination",
+          "label": "t:sections.main-collection-product-grid.settings.pagination_type.options__1.label"
+        },
+        {
+          "value": "load_more_button",
+          "label": "t:sections.main-collection-product-grid.settings.pagination_type.options__2.label"
+        }
+      ],
+      "default": "load_more_button",
+      "label": "t:sections.main-collection-product-grid.settings.pagination_type.label"
     },
     {
       "type": "header",
