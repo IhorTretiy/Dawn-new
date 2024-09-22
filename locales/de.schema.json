@@ -1497,6 +1497,15 @@
           "label": "Filtern aktivieren",
           "info": "Passe Filter mit der Search & Discovery-App an. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/filters)"
         },
+        "pagination_type": {
+          "label": "Pagination Type",
+          "options__1": {
+            "label": "Pagination"
+          },
+          "options__2": {
+            "label": "Load More Button"
+          }
+        },
         "enable_sorting": {
           "label": "Sortieren aktivieren"
         },

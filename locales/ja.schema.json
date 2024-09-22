@@ -1522,6 +1522,15 @@
           "label": "絞り込みを有効にする",
           "info": "Search & Discoveryアプリを使用すると、絞り込みをカスタマイズできます。[詳しくはこちら](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/filters)"
         },
+        "pagination_type": {
+          "label": "Pagination Type",
+          "options__1": {
+            "label": "Pagination"
+          },
+          "options__2": {
+            "label": "Load More Button"
+          }
+        },
         "enable_sorting": {
           "label": "並べ替えを有効にする"
         },

@@ -97,3 +97,15 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+.load-more-container{
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.load-more-container__btn {
+  max-width: 15rem;
+  background-color: white;
+  color: black;
+  padding: 0;
+}
