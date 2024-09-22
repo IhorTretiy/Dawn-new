@@ -323,7 +323,9 @@
     "collection_template": {
       "title": "商品系列",
       "empty": "找不到任何產品",
-      "use_fewer_filters_html": "使用較少篩選條件或<a class=\"{{ class }}\" href=\"{{ link }}\">全部移除<\/a>"
+      "use_fewer_filters_html": "使用較少篩選條件或<a class=\"{{ class }}\" href=\"{{ link }}\">全部移除<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "載入影片：{{ description }}"

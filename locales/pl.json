@@ -343,7 +343,9 @@
     "collection_template": {
       "title": "Kolekcja",
       "empty": "Nie znaleziono produktów",
-      "use_fewer_filters_html": "Użyj mniejszej ilości filtrów lub <a class=\"{{ class }}\" href=\"{{ link }}\">usuń wszystko<\/a>"
+      "use_fewer_filters_html": "Użyj mniejszej ilości filtrów lub <a class=\"{{ class }}\" href=\"{{ link }}\">usuń wszystko<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "Załaduj film: {{ description }}"

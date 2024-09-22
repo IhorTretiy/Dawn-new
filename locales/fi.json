@@ -323,7 +323,9 @@
     "collection_template": {
       "title": "Kokoelma",
       "empty": "Tuotteita ei löytynyt",
-      "use_fewer_filters_html": "Käytä vähemmän suodattimia tai <a class=\"{{ class }}\" href=\"{{ link }}\">poista kaikki<\/a>"
+      "use_fewer_filters_html": "Käytä vähemmän suodattimia tai <a class=\"{{ class }}\" href=\"{{ link }}\">poista kaikki<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "Lataa video: {{ description }}"

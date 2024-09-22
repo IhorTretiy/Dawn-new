@@ -323,7 +323,9 @@
     "collection_template": {
       "title": "Bộ sưu tập",
       "empty": "Không tìm thấy sản phẩm",
-      "use_fewer_filters_html": "Sử dụng ít bộ lọc hơn hoặc <a class=\"{{ class }}\" href=\"{{ link }}\">xóa tất cả<\/a>"
+      "use_fewer_filters_html": "Sử dụng ít bộ lọc hơn hoặc <a class=\"{{ class }}\" href=\"{{ link }}\">xóa tất cả<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "Tải video: {{ description }}"

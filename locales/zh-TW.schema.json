@@ -1522,6 +1522,15 @@
           "label": "啟用篩選",
           "info": "使用 Search & Discovery 應用程式來自訂篩選條件。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/filters)"
         },
+        "pagination_type": {
+          "label": "Pagination Type",
+          "options__1": {
+            "label": "Pagination"
+          },
+          "options__2": {
+            "label": "Load More Button"
+          }
+        },
         "enable_sorting": {
           "label": "啟用排序"
         },

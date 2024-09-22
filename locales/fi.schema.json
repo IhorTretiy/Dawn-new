@@ -1519,6 +1519,15 @@
           "label": "Ota suodatus käyttöön",
           "info": "Mukauta suodattimia Search & Discovery -sovelluksen avulla. [Lisätietoja](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/filters)"
         },
+        "pagination_type": {
+          "label": "Pagination Type",
+          "options__1": {
+            "label": "Pagination"
+          },
+          "options__2": {
+            "label": "Load More Button"
+          }
+        },
         "enable_sorting": {
           "label": "Ota lajittelu käyttöön"
         },

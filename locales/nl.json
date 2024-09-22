@@ -323,7 +323,9 @@
     "collection_template": {
       "title": "Collectie",
       "empty": "Geen producten gevonden",
-      "use_fewer_filters_html": "Minder filters gebruiken of <a class=\"{{ class }}\" href=\"{{ link }}\">alles verwijderen<\/a>"
+      "use_fewer_filters_html": "Minder filters gebruiken of <a class=\"{{ class }}\" href=\"{{ link }}\">alles verwijderen<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "Video laden: {{ description }}"

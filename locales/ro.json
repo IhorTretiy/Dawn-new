@@ -333,7 +333,9 @@
     "collection_template": {
       "title": "Colecție",
       "empty": "Nu s-au găsit produse",
-      "use_fewer_filters_html": "Folosește mai puține filtre sau <a class=\"{{ class }}\" href=\"{{ link }}\">elimină-le pe toate<\/a>"
+      "use_fewer_filters_html": "Folosește mai puține filtre sau <a class=\"{{ class }}\" href=\"{{ link }}\">elimină-le pe toate<\/a>",
+      "load_previous": "Load Previous",
+      "load_more": "Load more"
     },
     "video": {
       "load_video": "Încarcă clipul video: {{ description }}"
